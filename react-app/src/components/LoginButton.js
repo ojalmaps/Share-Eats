@@ -5,7 +5,7 @@ import { Button } from "@material-ui/core";
 const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
 
-  return <Button variant="contained" color="default" onClick={() => loginWithRedirect()}>Log In</Button>;
+  return <Button onClick={() => loginWithRedirect()}>Log In</Button>;
 };
 
 export default LoginButton;
