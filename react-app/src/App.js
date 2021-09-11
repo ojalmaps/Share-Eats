@@ -11,8 +11,9 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(3)
   },
+  toolbar: theme.mixins.toolbar,
 }));
 
 function App(props) {
@@ -24,11 +25,9 @@ function App(props) {
     <div className={classes.root}>
         <CssBaseline />
         <Navigation isAuthenticated={isAuthenticated} />
-        <Grid className={classes.content} container spacing={3}>
-          <Grid item>
-            <p>Welcome to the app.</p>
-            <RenderRoutes routes={ROUTES} />
-          </Grid>
+        <Grid className={classes.content}>
+        <div className={classes.toolbar} />
+          <RenderRoutes routes={ROUTES} />
         </Grid>
     </div>
   );

@@ -1,11 +1,15 @@
 import React from 'react';
 import LogoutButton from "./LogoutButton";
-import LoginButton from "./LoginButton";
 import { AppBar, Typography, Toolbar, IconButton, makeStyles, Divider, List, ListItem, ListItemText, Hidden, Drawer } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { useTheme } from '@material-ui/core';
 import { ListItemIcon } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import ListIcon from '@material-ui/icons/List';
+import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
+import StarIcon from '@material-ui/icons/Star';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const drawerWidth = 240;
 
@@ -53,20 +57,25 @@ function Navigation({ isAuthenticated, window }) {
             <Divider />
             <List>
                 <ListItem button key='Profile' component={Link} to="/profile">
-                    <ListItemIcon></ListItemIcon>
+                    <ListItemIcon><AccountBoxIcon /></ListItemIcon>
                     <ListItemText primary='Profile' />
                 </ListItem>
                 <ListItem button key='Feed' component={Link} to="/feed">
-                    <ListItemIcon></ListItemIcon>
+                    <ListItemIcon><ListIcon /></ListItemIcon>
                     <ListItemText primary='Feed' />
                 </ListItem>
                 <ListItem button key='Recommendations' component={Link} to="/recommendationlist">
-                    <ListItemIcon></ListItemIcon>
+                    <ListItemIcon><ThumbUpAltIcon/></ListItemIcon>
                     <ListItemText primary='Recommendations' />
                 </ListItem>
                 <ListItem button key='Wishlist' component={Link} to="/wishlist">
-                    <ListItemIcon></ListItemIcon>
+                    <ListItemIcon><StarIcon /></ListItemIcon>
                     <ListItemText primary='Wishlist' />
+                </ListItem>
+
+                <ListItem>
+                    <ListItemIcon><ExitToAppIcon /></ListItemIcon>
+                    <LogoutButton />
                 </ListItem>
             </List>
         </>
@@ -89,7 +98,6 @@ function Navigation({ isAuthenticated, window }) {
                 <Typography variant="h6" className={classes.title}>
                     ShareEats
                 </Typography>
-                {isAuthenticated ? <LogoutButton /> : <LoginButton />}
             </Toolbar>
         </AppBar>
 

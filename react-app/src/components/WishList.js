@@ -1,10 +1,11 @@
 import React from 'react';
 import Location from './Location';
 import { Grid } from '@material-ui/core';
-import { Button } from '@material-ui/core';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { getWishlist } from '../api';
+import Star from '@material-ui/icons/Star';
+import { Fab } from '@material-ui/core';
 
 function WishList() {
     const [locations, setLocations] = useState([]);
@@ -16,16 +17,19 @@ function WishList() {
     }, []);
 
     const locationViews = locations.map(location => (
-      <Grid item>
-        <Location key={location.id} {...location} />
-      </Grid>));
+        <Location key={location.id} {...location} />));
 
     return (
-      <Grid container spacing={3}>
+      <Grid container 
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        spacing={3}>
         {locationViews}
-        <Button variant="contained" color="primary">
-          Add New Wishlist Item
-        </Button>
+        <Fab variant="extended" color="secondary">
+          <Star />
+            New Wish
+        </Fab>
       </Grid>
     );
 }

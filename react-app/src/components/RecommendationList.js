@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import Location from './Location';
 import { Grid } from '@material-ui/core';
-import { Button } from '@material-ui/core';
 import { getRecommended } from '../api';
 import { useState } from 'react';
+import ThumbUpAlt from '@material-ui/icons/ThumbUpAlt';
+import { Fab } from '@material-ui/core';
 
 function RecommendationList() {
     const [locations, setLocations] = useState([]);
@@ -18,11 +19,17 @@ function RecommendationList() {
         <Location key={location.id} {...location} />));
 
     return (
-      <Grid container spacing={3}>
+      <Grid container 
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        spacing={3}
+        >
         {locationViews}
-        <Button variant="contained" color="primary">
-          Add New Recommended
-        </Button>
+        <Fab variant="extended" color="secondary">
+          <ThumbUpAlt/>
+            Recommend New
+        </Fab>
       </Grid>
     );
 }

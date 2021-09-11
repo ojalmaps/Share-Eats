@@ -3,6 +3,9 @@ import { Route, Switch } from "react-router-dom";
 import RecommendationList from "./components/RecommendationList";
 import WishList from "./components/WishList";
 import Login from "./components/Login";
+import LogoutButton from "./components/LogoutButton";
+import Profile from "./components/Profile";
+import Feed from "./components/Feed";
 
 const ROUTES = [
   { path: "/", key: "ROOT", exact: true, component: Login },
@@ -17,7 +20,20 @@ const ROUTES = [
     key: "WISHLIST",
     exact: true,
     component: WishList
-  }
+  },
+  {
+    path: "/profile",
+    key: "PROFILE",
+    exact: true,
+    component: Profile
+  },
+  {
+    path: "/feed",
+    key: "FEED",
+    exact: true,
+    component: Feed
+  },
+  { path: "/logout", key: "LOGOUT", exact: true, component: LogoutButton}
 ];
 
 export default ROUTES;
