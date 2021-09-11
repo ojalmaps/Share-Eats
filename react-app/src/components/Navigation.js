@@ -52,6 +52,14 @@ function Navigation({ isAuthenticated, window }) {
             <div className={classes.toolbar} onClick={handleDrawerToggle} />
             <Divider />
             <List>
+                <ListItem button key='Profile' component={Link} to="/profile">
+                    <ListItemIcon></ListItemIcon>
+                    <ListItemText primary='Profile' />
+                </ListItem>
+                <ListItem button key='Feed' component={Link} to="/feed">
+                    <ListItemIcon></ListItemIcon>
+                    <ListItemText primary='Feed' />
+                </ListItem>
                 <ListItem button key='Recommendations' component={Link} to="/recommendationlist">
                     <ListItemIcon></ListItemIcon>
                     <ListItemText primary='Recommendations' />
