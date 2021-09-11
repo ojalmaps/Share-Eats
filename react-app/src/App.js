@@ -21,6 +21,33 @@ function App() {
             )}
           </Grid>
         </Grid>
+
+        <form action="../post" method="post"  >
+          <button type="submit">Connected?</button>
+        </form>
+
+      <form action="../insert_item" method="post">
+      Enter item in the wishlist 
+      <br/>
+      <input type ="text" id ="hotel_name" placeholder ="Enter hotel name: " />
+      <br/>
+      <input type ="text" id ="food_item" placeholder ="Enter item name: " />
+      <br/> 
+      <input type ="text" id ="location" placeholder ="Enter hotel location: " />
+      <br/>
+      <input type = "submit" placeholder ="Add to wishlist ! "/>
+    </form>
+    <br/>
+    <br/>
+
+    <form action="../getwishlist/:id" method="get">
+    <input type ="text" id ="id" placeholder ="Enter id number:" />
+      <button>
+        Click to see wishlist ! 
+      </button>
+    </form>
+            
+
     </>
   );
 }
