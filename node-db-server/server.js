@@ -11,15 +11,18 @@ app.post("/post", (req, res) => {
     res.redirect("/");
 });
 
-app.get("/api/getwishlist:id", (req, res) => {
+app.get("/api/getwishlist", (req, res) => {
   var userid = req.params.id;
   // searches in db for data 
   var wishlist = {
     'wishlist':[ 
-      { hotelName: 'Wendy',
+      { 
+        id: 1,
+        hotelName: 'Wendy',
         menuitem: ['French Fries', 'Egg muffin']
       },
       {
+        id: 2,
         hotelName: 'Chilies',
         menuitem:'Beef Tacos'
       }
@@ -28,15 +31,17 @@ app.get("/api/getwishlist:id", (req, res) => {
   res.send(wishlist);
 });
 
-app.get("/api/getrec:id", (req, res) => {
+app.get("/api/getrec", (req, res) => {
   var userid = req.params.id;
   var recommend = {
     'recommended':[
     {
+      id: 1,
       hotelName: 'Burger King',
       menuitem: 'French Fries'
     },
     {
+      id: 2,
       hotelName: 'Luna Grill',
       menuitem : 'Salmon Salad'
     }
@@ -45,5 +50,5 @@ app.get("/api/getrec:id", (req, res) => {
   res.send(recommend);
 });
 
-// app.listen(PORT, console.log(`Server started on port ${PORT}`));
+app.listen(PORT, console.log(`Server started on port ${PORT}`));
 

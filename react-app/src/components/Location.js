@@ -1,10 +1,19 @@
 import React from 'react';
+import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 
-function Location() {
+function Location({ id, hotelName, menuitem }) {
+
     return (
-        <>
-            <h2>Location</h2>
-        </>
+        <Grid item>
+            <Card>
+                <CardContent>
+                    <Typography variant="h5" component="h2">
+                        {hotelName}
+                    </Typography>
+                    {menuitem}
+                </CardContent>
+            </Card>
+        </Grid>
     );
 }
 
