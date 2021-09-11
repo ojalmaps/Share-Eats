@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/79382883-9435-41a1-ad77-c40d01d6965b/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/theexpressapptechtogether44",
+    "appService.deploySubpath": "node-server"
+}

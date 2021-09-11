@@ -1,0 +1,20 @@
+{
+  "name": "Food-app-server",
+  "version": "1.0.0",
+  "description": "\"Server for our social food app\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js && node database.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Ojal",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "mysql2": "^2.3.0",
+    "nodemon": "^2.0.12"
+  }
+}
