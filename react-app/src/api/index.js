@@ -15,9 +15,8 @@ export async function getRecommended(setData) {
     });
 }
 
-
 export async function getWishlist() {
-    return await fetch("/api/getwishlist", {
+    return await fetch("/getwishlist", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
     }).
