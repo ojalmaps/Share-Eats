@@ -1,9 +1,9 @@
-# Food Hacks (Temporary Title)
+# ShareEats
 
 Created for TechTogether Boston 
 
 ### Team
-
+Sharon,Ojal,Jessica
 
 ### General Info
 This is mobile friendly web application which allows users to log in and then add items to their wishlist. 
