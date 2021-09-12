@@ -1,6 +1,21 @@
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = 8080;
+let food_num = 100; 
+let mysql = require('mysql2');
+let config = require('./config.js');
+let connection = mysql.createConnection(config);
+
+connection.connect(function(err) {
+    if (err) {
+      return console.error('error: ' + err.message);
+    }
+    console.log('Connected to the MySQL server.');
+});
+
+app.use(express.urlencoded({
+  extended: true
+}))
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
@@ -8,27 +23,58 @@ app.get('/', (req, res) => {
   
 app.post("/post", (req, res) => {
     console.log("Connected to React");
+    res.send({ key: 'POST request to the homepage'});
     res.redirect("/");
 });
 
-app.get("/api/getwishlist", (req, res) => {
-  var userid = req.params.id;
-  // searches in db for data 
-  var wishlist = {
-    'wishlist':[ 
-      { 
-        id: 1,
-        hotelName: 'Wendy',
-        menuitem: ['French Fries', 'Egg muffin']
-      },
-      {
-        id: 2,
-        hotelName: 'Chilies',
-        menuitem:'Beef Tacos'
-      }
-    ]
-  };
-  res.send(wishlist);
+app.post("/insert_item",(req,res) =>{
+   item = req.body.food_item;
+   hotelname = req.body.hotel_name;
+   option = req.body.choice;
+   category = 0;
+   
+   if (option == 'wish'){
+      category = 1;
+   }
+       
+  var location = "CA";
+  let i_sql =`Insert into food_list(id,name,item,location,category)
+    Values ('${food_num}', '${hotelname}', '${item}', '${location}','${category}')`
+  connection.query(i_sql);
+  food_num+=1;
+
+  res.redirect("/");
+});
+
+app.post("/remove_item",(req,res) =>{
+  var hotelname = req.body.hotel_name;
+
+  let d_sql =`Delete from food_list where id = ?`;
+
+  connection.query(d_sql, `hotel_name`,(error,results,fields) =>{
+    if (error) {
+      return console.error(error.message);
+    }
+    console.log(results);
+  });
+  console.log('removed item');
+  res.redirect("/");
+});
+
+
+
+app.get("/getwishlist", (req, res) => {
+  //var userid = req.params.id;
+  console.log('Getting wishlist');
+  let q_sql = `SELECT * FROM food_list WHERE id = 4` ;
+  connection.query(q_sql, (error, results, fields) => {
+    if (error) {
+      return console.error(error.message);
+    }
+    console.log(results);
+    res.send(results);
+  });
+
 });
 
 app.get("/api/getrec", (req, res) => {
