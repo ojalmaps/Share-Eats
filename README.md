@@ -28,7 +28,7 @@ On the frontend side, we learned how to setup login with Auth0, utilize React Ro
 
 We ran into many technical challenges along the way, because we decided to tackle areas we weren't very familiar with. Our primary challenge was figuring out how to set up MySQL on the server-side and make that database setup accessible to everyone on the team. We had many questions, such as whether that database should be created locally or if we should utilize Microsoft Azure to support a remote database. Another challenge was figuring out how to use Microsoft Azure's Github Actions to deploy our combined frontend and backend together. We received a lot of help from the Microsoft mentors about how to work with Azure and ended up deploying just the React app to the frontend through the VS wizard for creating static web apps. We also sought help for deploying our Node.js server and MySQL database server separately on Microsoft Azure and we are still working on it up until project submission deadline.
 
-Even though we did not finish a workable prototype, we're really proud of what we managed to accomplish. From having no backend or database experience at all, we managed to set up a Node.js server with a separate MySQL server from scratch, connect it with a React frontend, and deploy parts of it onto Microsoft Azure. We came into this project with a goal of using technology we don't usually have the opportunity to use and we ended up learning a lot and gaining confidence in using these technologies in the future.
+Even though we did not finish a workable prototype, we're really proud of what we managed to accomplish. From having no backend or database experience at all, we managed to set up a Node.js server with a separate MySQL server from scratch, connect it with a React frontend, and deploy parts of it onto Microsoft Azure. We came into this project with a goal of using industry technology we don't usually have the opportunity to use and we ended up learning a lot and gaining confidence with these technologies. This project gave us a good foundation that we can work with and build on after this hackathon. 
 
 #### Built with
 
@@ -47,5 +47,7 @@ React and Material UI for the fronted, Node.js with Express.js for the backend a
 ![UI Design](uidesign.png)
 
 ![Navigation](techtogether_navigation.gif)
+
+![Database](sqldatabase.png)
 
 #### Video demo link
