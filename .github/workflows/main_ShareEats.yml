@@ -53,4 +53,4 @@ jobs:
         app-name: 'ShareEats'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_d2121ce9d5d94b2a8167ea26a08e8f75 }}
-        package: .
+        package: ./react-app
