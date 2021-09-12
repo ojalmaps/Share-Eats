@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Navigation from "./components/Navigation";
 import { Grid } from '@material-ui/core';
-import { makeStyles, CssBaseline, Typography } from '@material-ui/core';
+import { makeStyles, CssBaseline } from '@material-ui/core';
 import { useAuth0 } from "@auth0/auth0-react";
 import ROUTES, { RenderRoutes } from "./routes";
 
@@ -17,8 +17,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function App(props) {
-  const { window } = props;
-  const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const { isAuthenticated } = useAuth0();
   const classes = useStyles();
 
   return (

@@ -1,10 +1,9 @@
 export async function getRecommended(setData) {
-    const id = 1;
     return await fetch("/api/getrec", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
-    }).
-    then((response) => {
+    })
+    .then((response) => {
         if (!response.ok) {
             throw new Error("HTTP status " + response.status);
         }
@@ -19,8 +18,8 @@ export async function getWishlist() {
     return await fetch("/getwishlist", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
-    }).
-    then((response) => {
+    })
+    .then((response) => {
         if (!response.ok) {
             throw new Error("HTTP status " + response.status);
         }

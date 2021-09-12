@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { Auth0Provider } from "@auth0/auth0-react";
-import config from "./auth_config.json";
 import { BrowserRouter } from 'react-router-dom';
 import { createTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
@@ -26,8 +25,8 @@ const theme = createTheme({
 
 ReactDOM.render(
     <Auth0Provider
-      domain={config.domain}
-      clientId={config.clientId}
+      domain={process.env['REACT_APP_DOMAIN']}
+      clientId={process.env['REACT_APP_CLIENT_ID']}
       redirectUri={window.location.origin}
     >
       <BrowserRouter>
