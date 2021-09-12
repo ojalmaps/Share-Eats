@@ -77,15 +77,17 @@ app.get("/getwishlist", (req, res) => {
 
 });
 
-app.get("/api/getrec:id", (req, res) => {
+app.get("/api/getrec", (req, res) => {
   var userid = req.params.id;
   var recommend = {
     'recommended':[
     {
+      id: 1,
       hotelName: 'Burger King',
       menuitem: 'French Fries'
     },
     {
+      id: 2,
       hotelName: 'Luna Grill',
       menuitem : 'Salmon Salad'
     }
