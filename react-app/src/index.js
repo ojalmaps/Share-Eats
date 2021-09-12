@@ -25,8 +25,8 @@ const theme = createTheme({
 
 ReactDOM.render(
     <Auth0Provider
-      domain={REACT_APP_domain}
-      clientId={REACT_APP_clientId}
+      // domain={REACT_APP_domain}
+      // clientId={REACT_APP_clientId}
       redirectUri={window.location.origin}
     >
       <BrowserRouter>
