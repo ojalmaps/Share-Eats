@@ -30,11 +30,16 @@ app.post("/post", (req, res) => {
 app.post("/insert_item",(req,res) =>{
    item = req.body.food_item;
    hotelname = req.body.hotel_name;
-  console.log(item);
-  console.log(hotelname);
+   option = req.body.choice;
+   category = 0;
+   
+   if (option == 'wish'){
+      category = 1;
+   }
+       
   var location = "CA";
   let i_sql =`Insert into food_list(id,name,item,location,category)
-    Values ('${food_num}', '${hotelname}', '${item}', '${location}',1)`
+    Values ('${food_num}', '${hotelname}', '${item}', '${location}','${category}')`
   connection.query(i_sql);
   food_num+=1;
 
@@ -69,7 +74,7 @@ app.get("/getwishlist", (req, res) => {
     console.log(results);
     res.send(results);
   });
-  res.send(results);
+
 });
 
 app.get("/api/getrec:id", (req, res) => {
